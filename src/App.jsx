@@ -37,13 +37,16 @@ function getResult() {
     return "Select to begin a game"
   } else if(playerChoice === computerChoice) {
     return "You have drawn!"
-   } else if (playerChoice === "Rock" && computerChoice === "Paper" || playerChoice === "Paper" && computerChoice === "Scissors" || playerChoice === "Scissors" && computerChoice === "Rock") {
+   } else if (
+    (playerChoice === "Rock" && computerChoice === "Paper") ||
+    (playerChoice === "Paper" && computerChoice === "Scissors") ||
+    (playerChoice === "Scissors" && computerChoice === "Rock")) {
     return `You have lost! You chose ${playerChoice} but the computer chose ${computerChoice}!`
    } else {
     return "You have won! Congratulations! 🪩"
    }
-      
 }
+
   return (
     <div className="game">
       <p>Player 1 chose: <span>{playerChoice}</span></p>
